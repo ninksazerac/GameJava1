@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainGameStageController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/bg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="297.0" layoutY="113.0" />
+      <Button fx:id="flodBtn" layoutX="119.0" layoutY="452.0" mnemonicParsing="false" onAction="#flodBtnAction" prefWidth="50.0" text="Flod">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="checkBtn" layoutX="119.0" layoutY="479.0" mnemonicParsing="false" onAction="#checkBtnAction" prefWidth="50.0" text="Check">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="callBtn" layoutX="119.0" layoutY="506.0" mnemonicParsing="false" onAction="#callBtnAction" prefWidth="50.0" text="Call">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="raiseBtn" layoutX="119.0" layoutY="533.0" mnemonicParsing="false" onAction="#raiseBtnAction" prefWidth="50.0" text="Raise">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btn500" disable="true" layoutX="213.0" layoutY="479.0" mnemonicParsing="false" onAction="#btn500Action" prefWidth="50.0" text="500">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btn100" disable="true" layoutX="269.0" layoutY="479.0" mnemonicParsing="false" onAction="#btn100Action" prefWidth="50.0" text="100">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btn50" disable="true" layoutX="213.0" layoutY="506.0" mnemonicParsing="false" onAction="#btn50Action" prefWidth="50.0" text="50">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btn20" disable="true" layoutX="269.0" layoutY="506.0" mnemonicParsing="false" onAction="#btn20Action" prefWidth="50.0" text="20">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <ImageView fx:id="player01" fitHeight="120.0" fitWidth="88.0" layoutX="367.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player02" fitHeight="120.0" fitWidth="88.0" layoutX="461.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="flop01" fitHeight="120.0" fitWidth="88.0" layoutX="87.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="flop02" fitHeight="120.0" fitWidth="88.0" layoutX="200.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="flop03" fitHeight="120.0" fitWidth="88.0" layoutX="309.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="turn" fitHeight="120.0" fitWidth="88.0" layoutX="419.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="river" fitHeight="120.0" fitWidth="88.0" layoutX="536.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="com01" fitHeight="120.0" fitWidth="88.0" layoutX="367.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="com02" fitHeight="120.0" fitWidth="88.0" layoutX="461.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/00.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="157.0" layoutY="33.0" text="Computer" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="comBalance" layoutX="157.0" layoutY="67.0" text="balance" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="650.0" layoutY="222.0" text="POT" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="potBalance" layoutX="652.0" layoutY="254.0" text="balance" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="playerName" layoutX="576.0" layoutY="469.0" text="Name" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="playerBalance" layoutX="578.0" layoutY="495.0" text="balance" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="playerOnHand" contentDisplay="CENTER" layoutX="422.0" layoutY="403.0" text="what on hands" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="comOnHand" contentDisplay="CENTER" layoutX="424.0" layoutY="169.0" text="what on hand" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="allInBtn" disable="true" layoutX="232.0" layoutY="452.0" mnemonicParsing="false" onAction="#allInBtnAction" text="ALL-IN">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="resetBtn" disable="true" layoutX="242.0" layoutY="533.0" mnemonicParsing="false" onAction="#resetBtnAction" text="Reset">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Label fx:id="comPlay" layoutX="567.0" layoutY="169.0" text="play" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="playerPlay" layoutX="564.0" layoutY="403.0" text="play" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Circle fx:id="comButton" disable="true" fill="#ff1f1f" layoutX="351.0" layoutY="178.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="playerBtn" disable="true" fill="#ff1f1f" layoutX="351.0" layoutY="412.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="231.0" layoutY="343.0" text="flop" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="450.0" layoutY="343.0" text="turn" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="566.0" layoutY="343.0" prefHeight="17.0" text="river" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="confirmBtn" disable="true" layoutX="119.0" layoutY="399.0" mnemonicParsing="false" onAction="#confirmBtnAction" text="comfirm">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Label fx:id="playerRiseBalance" disable="true" layoutX="218.0" layoutY="403.0" text="balance" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="mainMenuBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mainMenuBtnAction" text="Mainmenu">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="restartBtn" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" onAction="#restartBtnAction" text="Restart">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+      <Label fx:id="winLebal" layoutX="53.0" layoutY="143.0" prefHeight="43.0" text="who win" textFill="WHITE">
+         <font>
+            <Font name="Script MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="continueBtn" disable="true" layoutX="51.0" layoutY="125.0" mnemonicParsing="false" onAction="#continueBtnAction" opacity="0.0" text="continue">
+         <font>
+            <Font name="Script MT Bold" size="13.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
